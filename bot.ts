@@ -74,7 +74,7 @@ class FlamesBot extends Bot {
         // Convert mention tags into user arrays.
         const users = this.getUsersFromMentions(...args);
 
-        const printNames = `Users who gets FLAMES'd: ${users.map(user => user.id !== "0-non" ? `<@${user.id}>` : user.username).join(", ")}\n`;
+        const printNames = `Users who got FLAMES'd: ${users.map(user => user.id !== "0-non" ? `<@${user.id}>` : user.username).join(", ")}\n`;
 
         // This indicates that the bot recognized the message of the user.
         const startMsg = await message.channel.send(dedent`
