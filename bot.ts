@@ -19,6 +19,13 @@ const delay = (ms) => {
     });
 }
 
+interface NonUser {
+    id: string,
+    username: string,
+    bot: boolean,
+    discriminator: string
+}
+
 //@ts-ignore
 class FlamesBot extends Bot {
     client: Client;
@@ -32,7 +39,7 @@ class FlamesBot extends Bot {
         console.log("🔥 F.L.A.M.E.S Bot has started 🔥");
     }
 
-    getUsersFromMentions(...mentions: string[]): Array<User> {
+    getUsersFromMentions(...mentions: string[]): Array<User | NonUser> {
         if (!mentions) return;
 
         return mentions.map(mention => {
@@ -44,6 +51,13 @@ class FlamesBot extends Bot {
                 }
 
                 return this.client.users.get(mention);
+            } else {
+                return {
+                    username: mention,
+                    discriminator: "0000",
+                    bot: false,
+                    id: "0-non"
+            }
             }
         });
     }
@@ -60,7 +74,7 @@ class FlamesBot extends Bot {
         // Convert mention tags into user arrays.
         const users = this.getUsersFromMentions(...args);
 
-        const printNames = `Users who gets FLAMES'd: ${users.map(user => `<@${user.id}>`).join(", ")}\n`;
+        const printNames = `Users who gets FLAMES'd: ${users.map(user => user.id !== "0-non" ? `<@${user.id}>` : user.username).join(", ")}\n`;
 
         // This indicates that the bot recognized the message of the user.
         const startMsg = await message.channel.send(dedent`
@@ -149,7 +163,8 @@ class FlamesBot extends Bot {
             It predicts the romantic chemistry/relationship between the names of the two people by\nremoving the common letters and computes the remaining ones.\n
             \n
             Usage:\n
-            \`\`\`+flames @username1#1234 @username2#2345\`\`\`
+            \`\`\`+flames @username1#1234 @username2#2345\`\`\`\n
+            **Tip:** You can use ordinary names.
         `)
         } else {
             this.flamesTest(message, args);
