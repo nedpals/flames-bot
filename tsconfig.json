@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "allowJs": true,
+        "target": "es6",
+        "lib": ["es6"],
+        "strict": false
+    },
+    "include": [
+        "bot.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
