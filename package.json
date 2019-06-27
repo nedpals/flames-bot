@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build": "tsc --project tsconfig.json",
-    "start": "npm run-script build && npx disco run ./bot.js",
+    "start": "npx disco run ./bot.js",
     "start-dev": "cross-env NODE_ENV=development npm run-script start"
   },
   "dependencies": {
