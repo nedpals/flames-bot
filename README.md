@@ -9,7 +9,7 @@
   </a>
 </p>
 
-> Let this Discord bot predict the romantic chemistry/relationship with other Discord users that you like. An entry for the [Discord Hack Week](https://blog.discordapp.com/discord-community-hack-week-build-and-create-alongside-us-6b2a7b7bba33).
+> Let this Discord bot predict the romantic chemistry/relationship with other Discord users that you like. <br /> An entry for the [Discord Hack Week](https://blog.discordapp.com/discord-community-hack-week-build-and-create-alongside-us-6b2a7b7bba33).
 
 ## Install
 
@@ -19,6 +19,7 @@ npm install
 
 **If you are going to use the bot in your dev machine, please create a `.env` file first before you start using it.**
 ```env
+// .env
 DISCORD_TOKEN=<discord token here>
 ```
 
@@ -30,7 +31,7 @@ npm run start-dev # for development
 ```
 
 ### Reaction Support
-Once a user will commence the test, a message will appear and from there you can react which of the following will be the result of that test.
+Once a user will commence the test, a message will appear and from there you can react which of the following will be the outcome of that test out of all the possible outcomes.
 ```
 🇫 - Friends
 🇱 - Lovers
