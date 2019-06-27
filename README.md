@@ -9,10 +9,16 @@
   </a>
 </p>
 
-> Let this Discord bot predict the romantic chemistry/relationship with other Discord users that you like. <br /> An entry for the [Discord Hack Week](https://blog.discordapp.com/discord-community-hack-week-build-and-create-alongside-us-6b2a7b7bba33).
+> Let this Discord bot predict your romantic chemistry/relationship with other people. <br /> An entry for the [Discord Hack Week](https://blog.discordapp.com/discord-community-hack-week-build-and-create-alongside-us-6b2a7b7bba33).
+
+## Demo
+https://discord.gg/XV8J24A
 
 ## Install
+### Server Install
+You can install the bot by clicking [here](https://discordapp.com/api/oauth2/authorize?client_id=593572228784848907&permissions=1073817664&scope=bot).
 
+### Manual Install
 ```sh
 npm install
 ```
@@ -30,6 +36,8 @@ npm run start # for production
 npm run start-dev # for development
 ```
 
+When the bot is running, you can now
+
 ### Reaction Support
 Once a user will commence the test, a message will appear and from there you can react which of the following will be the outcome of that test out of all the possible outcomes.
 ```
@@ -43,7 +51,7 @@ Once a user will commence the test, a message will appear and from there you can
 Whoever predicted the outcome correctly will be printed in the results.
 
 ### What does it do?
-It crosses out the common letters found between those two usernames and sums up the length of the remaining letters. After that, the bot will count the number (from zero to the summed up number) against the acronym:
+It crosses out the common letters found between those two names and sums up the length of the remaining letters. After that, the bot will count the number (from zero to the summed up number) against the acronym:
 ```
 F - Friends
 L - Lovers
