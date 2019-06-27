@@ -36,7 +36,7 @@ npm run start # for production
 npm run start-dev # for development
 ```
 
-See `+flames ?` or `+flames help` for instructions.
+See `+flames ?` or `+flames help` for instructions on how to use it.
 
 ### Reaction Support
 Once a user will commence the test, a message will appear and from there you can react which of the following will be the outcome of that test out of all the possible outcomes.
