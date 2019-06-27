@@ -79,21 +79,18 @@ class FlamesBot extends Bot {
         // This indicates that the bot recognized the message of the user.
         const startMsg = await message.channel.send(dedent`
             ${printNames}
-
             Guess the outcome by reacting to this message.\n
-            \:regional_indicator_f: - Friends\n
-            \:regional_indicator_l: - Lovers\n
-            \:regional_indicator_a: - Anger\n
-            \:regional_indicator_m: - Married\n
-            \:regional_indicator_e: - Enemies\n
-            \:regional_indicator_s: - Soulmates\n
-
+            ${flames_emojis["friends"]} - Friends\n
+            ${flames_emojis["lovers"]} - Lovers\n
+            ${flames_emojis["anger"]} - Anger\n
+            ${flames_emojis["married"]} - Married\n
+            ${flames_emojis["enemies"]} - Enemies\n
+            ${flames_emojis["soulmates"]} - Soulmates\n
             You have a minute to guess!
         `) as Message;
 
         const computed = (() => {
             const usernames: string[] = users.map(u => u.username.toLowerCase());
-            const discriminator: string[] = users.map(u => u.discriminator);
 
             // Results object
             let sum = 0;
