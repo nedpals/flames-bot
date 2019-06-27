@@ -144,9 +144,7 @@ class FlamesBot extends Bot {
         // Prints the result
         await startMsg.channel.send(dedent`
         ${printNames}
-
         The result is: ${flames_emojis[computed]} ${computed.toUpperCase()}!\n
-
         ${reactors.length !== 0 ? `
         Congratulations to those people who guessed the result:\n
         ${reactors.map(u => `<@${u.id}>`).join("\n")}
