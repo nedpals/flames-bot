@@ -1,1 +1,1 @@
-worker: node run-script start
+worker: npm run-script start
