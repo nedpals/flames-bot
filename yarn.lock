@@ -4,7 +4,7 @@
 
 "@nedpals/disco-js@https://github.com/nedpals/disco":
   version "1.0.3"
-  resolved "https://github.com/nedpals/disco#ae67c26461a8b1948813e039c2bd90c5d9d0d7aa"
+  resolved "https://github.com/nedpals/disco#ee3001dfb0122cbcc69ca896a23b176dc42213cd"
   dependencies:
     discord.js "^11.5.0"
     dotenv "^8.0.0"
