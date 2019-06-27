@@ -57,7 +57,7 @@ class FlamesBot extends Bot {
                     discriminator: "0000",
                     bot: false,
                     id: "0-non"
-            }
+                }
             }
         });
     }
@@ -98,30 +98,31 @@ class FlamesBot extends Bot {
             const usernamesChopped: string[][] = usernames.map(u => u.split(""));
             
             // This is where intersecting/common characters between two usernames go.
-            let common: string[] = [];
+            const common: string[] = [];
 
             // Loops each character of the first username
-            for (const letter in usernamesChopped[0]) {
+            usernamesChopped[0].forEach(letter => {
                 // Checks if the character in first username is present in second username
                 if (usernamesChopped[1].includes(letter)) {
-
                     // If character is not present in the common array, push it.
                     if (common.indexOf(letter) === -1) {
                         common.push(letter);
                     }
                 }
-            }
+            });
 
             // Filter usernames
-            let commonCharRemoved: string[][] = usernamesChopped.map(name => {
-                return name.filter(c => !common.includes(c));
+            const commonCharRemoved: string[][] = usernamesChopped.map(name => {
+                return name.filter(c => !(common.length === 0 ? [] : common).includes(c));
             });
 
             // Combines the sum of two char lengths of the remaining chars in the usernames
             sum = commonCharRemoved.map(u => u.length).reduce((p, c) => p + c, 0);
 
+            const result = spin(sum || 0);
+
             // SPIN THAT WHEEL!
-            return spin(sum);
+            return result;
         })();
 
         await delay(60000);
