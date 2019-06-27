@@ -79,7 +79,7 @@ class FlamesBot extends Bot {
         // This indicates that the bot recognized the message of the user.
         const startMsg = await message.channel.send(dedent`
             ${printNames}
-            Guess the outcome by reacting to this message.\n
+            Guess the outcome by reacting to this message:\n
             ${flames_emojis["friends"]} - Friends\n
             ${flames_emojis["lovers"]} - Lovers\n
             ${flames_emojis["anger"]} - Anger\n
