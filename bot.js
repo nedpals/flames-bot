@@ -37,11 +37,11 @@ class FlamesBot extends disco_js_1.Bot {
             }
             // Convert mention tags into user arrays.
             const users = this.getUsersFromMentions(...args);
-            const printNames = `Users who gets FLAMES'd: ${users.map(user => user.id !== "0-non" ? `<@${user.id}>` : user.username).join(", ")}\n`;
+            const printNames = `Users who got FLAMES'd: ${users.map(user => user.id !== "0-non" ? `<@${user.id}>` : user.username).join(", ")}\n`;
             // This indicates that the bot recognized the message of the user.
             const startMsg = yield message.channel.send(dedent `
             ${printNames}
-            Guess the outcome by reacting to this message.\n
+            Guess the outcome by reacting to this message:\n
             ${flames_emojis["friends"]} - Friends\n
             ${flames_emojis["lovers"]} - Lovers\n
             ${flames_emojis["anger"]} - Anger\n
